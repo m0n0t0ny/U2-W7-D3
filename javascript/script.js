@@ -2,15 +2,6 @@ fetch("https://striveschool-api.herokuapp.com/books")
   .then((response) => {
     if (response.ok) {
       return response.json();
-    }
-  })
-  .then((usersObj) => console.log(usersObj))
-  .catch((error) => console.log("catch block", error));
-
-fetch("https://striveschool-api.herokuapp.com/books")
-  .then((response) => {
-    if (response.ok) {
-      return response.json();
     } else {
       if (response.status === 400) {
         throw new Error("Richiesta non valida");
@@ -39,16 +30,19 @@ fetch("https://striveschool-api.herokuapp.com/books")
       book.className = "card h-100";
 
       const bookInfo = document.createElement("div");
-      bookInfo.className = "card-body";
+      bookInfo.className = "card-body d-flex flex-column";
+
+      const cardButtons = document.createElement("div");
+      cardButtons.className = "card-buttons d-flex mt-1 row-col-2";
 
       const buttonHide = document.createElement("button");
-      buttonHide.className = "btn btn-outline-secondary";
+      buttonHide.className = "btn btn-outline-secondary col";
       buttonHide.innerText = "Nascondi";
       buttonHide.id = "button-hide";
       buttonHide.addEventListener("click", hideCard);
 
       const buttonBuy = document.createElement("button");
-      buttonBuy.className = "btn btn-success mt-1";
+      buttonBuy.className = "btn btn-success col";
       buttonBuy.innerText = "Acquista";
       buttonBuy.id = "button-buy";
 
@@ -61,10 +55,10 @@ fetch("https://striveschool-api.herokuapp.com/books")
       }
 
       if (bookInTheArray.title) {
-        const h3 = document.createElement("h5");
-        h3.className = "book-title card-title my-0";
-        h3.textContent = bookInTheArray.title;
-        bookInfo.appendChild(h3);
+        const h5 = document.createElement("h5");
+        h5.className = "book-title card-title my-0";
+        h5.textContent = bookInTheArray.title;
+        bookInfo.appendChild(h5);
       }
 
       if (bookInTheArray.price) {
@@ -91,8 +85,9 @@ fetch("https://striveschool-api.herokuapp.com/books")
       bookshelfRow.appendChild(bookBox);
       bookBox.appendChild(book);
       book.appendChild(bookInfo);
-      bookInfo.appendChild(buttonHide);
-      bookInfo.appendChild(buttonBuy);
+      bookInfo.appendChild(cardButtons);
+      cardButtons.appendChild(buttonHide);
+      cardButtons.appendChild(buttonBuy);
     });
   })
   .catch((error) => console.log("Blocco catch", error));
@@ -119,7 +114,7 @@ function addToCart(book) {
 
 buttonBuy.addEventListener("click", function () {
   const bookBox = this.closest(".book-box");
-  const bookInfo = bookBox.querySelector(".book-info");
+  const bookInfo = bookBox.querySelector("card-body");
 
   const bookData = {
     title: document.querySelector(".book-title").textContent,
