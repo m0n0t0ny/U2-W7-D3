@@ -62,28 +62,28 @@ fetch("https://striveschool-api.herokuapp.com/books")
 
       if (bookInTheArray.title) {
         const h3 = document.createElement("h5");
-        h3.className = "book-title card-title py-1";
+        h3.className = "book-title card-title my-0";
         h3.textContent = bookInTheArray.title;
         bookInfo.appendChild(h3);
       }
 
       if (bookInTheArray.price) {
         const price = document.createElement("p");
-        price.className = "book-price card-text";
+        price.className = "book-price card-text  my-0";
         price.textContent = bookInTheArray.price + "€";
         bookInfo.appendChild(price);
       }
 
       if (bookInTheArray.category) {
         const category = document.createElement("p");
-        category.className = "book-category";
+        category.className = "book-category d-none";
         category.textContent = bookInTheArray.category;
         bookInfo.appendChild(category);
       }
 
       if (bookInTheArray.asin) {
         const asin = document.createElement("p");
-        asin.className = "book-asin";
+        asin.className = "book-asin d-none";
         asin.textContent = "sin: " + bookInTheArray.asin;
         bookInfo.appendChild(asin);
       }
