@@ -1,0 +1,52 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  z-index: 3;
+  position: fixed;
+  width: 100%;
+}
+
+#bookshelf {
+}
+
+.bookshelf-row {
+}
+
+.bookshelf-col {
+}
+
+.book-title {
+}
+
+/* * Media queries */
+
+/* @media screen and (min-width:576px) {
+} */
+
+/* @media screen and (min-width:768px) {
+} */
+
+/* @media screen and (min-width:992px) {
+} */
+
+/* @media screen and (min-width:1200px) {
+} */
+
+/* @media screen and (min-width:1400px) {
+} */

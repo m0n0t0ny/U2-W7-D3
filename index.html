@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>https://github.com/M0N0T0NY</title>
+    <meta name="description" content="" />
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-awesome 5.15 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- bootstrap 5.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="./assets/dist/css/style.min.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+
+  <body>
+    <!-- Devi realizzare una pagina per una “libreria” contenenente libri derivanti da una chiamata HTTP di tipo GET.
+      Endpoint: https://striveschool-api.herokuapp.com/books Requisiti della pagina:
+      Utilizza Bootstrap 5 per creare una pagina responsive con una sezione centrale a 3 o 4 colonne per riga
+      Ogni colonna avrà al suo interno un elemento Card di Bootstrap, creata a partire da un singolo libro:
+      nella “card image” inserisci la copertina del libro, nel “card body” il suo titolo e il suo prezzo.
+      Sempre nel “card body” inserisci un pulsante “Scarta”. Se premuto, dovrà far scomparire la card dalla pagina.
+      EXTRA: crea una lista che rappresenti il carrello del negozio e inseriscila dove vuoi nella pagina.
+      Aggiungi un altro pulsante “Compra ora” vicino a “Scarta” nelle card per aggiungere il libro al carrello.
+      Il carrello dovrà persistere nello storage del browser. 
+      EXTRA: aggiungi vicino ad ogni libro del carrello un pulsante per rimuoverlo dal carrello -->
+
+    <header>
+      <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary py-2 px-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">EpiBooks</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <div class="total">
+              <i class="bi bi-cart"></i>
+              <span id="cart-total">0,00</span>
+              <span>€</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-5">
+      <div id="bookshelf" class="container h-100 mt-3">
+        <div id="bookshelf-row" class="row h-100"></div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <!-- js bootstrap popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <!-- js bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <!-- js scripts -->
+    <script src="./javascript/script.js"></script>
+  </body>
+</html>
