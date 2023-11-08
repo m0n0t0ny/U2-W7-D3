@@ -62,7 +62,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
 
       if (bookInTheArray.title) {
         const h3 = document.createElement("h5");
-        h3.className = "book-title card-title";
+        h3.className = "book-title card-title py-1";
         h3.textContent = bookInTheArray.title;
         bookInfo.appendChild(h3);
       }

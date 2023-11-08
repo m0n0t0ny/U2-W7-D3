@@ -32,6 +32,9 @@ header {
 }
 
 .book-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* * Media queries */
